@@ -1,0 +1,6 @@
+# Project exclude paths
+/kgo-commons/target/
+/kgo-manage/target/
+/kgo-pojo/target/
+/kgo-service/target/
+/kgo-service-impl/target/
