@@ -24,7 +24,10 @@
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+<<<<<<< HEAD
 
     <!-- 文件上传解析器 -->
     <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver"></bean>
+=======
+>>>>>>> c14fefc6fdc2d9ab8060efdb44e43c76168d5b6e
 </beans>
