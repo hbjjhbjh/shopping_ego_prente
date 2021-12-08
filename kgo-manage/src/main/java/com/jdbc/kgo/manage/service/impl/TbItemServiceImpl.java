@@ -2,10 +2,14 @@ package com.jdbc.kgo.manage.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.ego.commons.pojo.EasyUIDataGrid;
+import com.ego.commons.utils.IdUtils;
 import com.jdbc.ego.pojo.TbItem;
+import com.jdbc.ego.pojo.TbItemDesc;
 import com.jdbc.kgo.manage.service.TbItemService;
 import com.kgo.dubbo.service.TbItemDubboService;
 import org.springframework.stereotype.Service;
+
+import java.util.Date;
 
 @Service
 public class TbItemServiceImpl implements TbItemService {
@@ -38,5 +42,29 @@ public class TbItemServiceImpl implements TbItemService {
             return 1;
         }
         return 0;
+    }
+
+    /*
+     * 新增商品信息
+     * */
+    @Override
+    public int insertInto(TbItem item, String desc) throws Exception {
+        Date date = new Date();
+        long id = IdUtils.genItemId();
+        //商品表
+        item.setId(id);
+        item.setStatus((byte) 1);
+        item.setCreated(date);
+        item.setUpdated(date);
+
+        TbItemDesc tbItemDesc = new TbItemDesc();
+        //商品描述表
+        tbItemDesc.setItemId(id);
+        tbItemDesc.setItemDesc(desc);
+        tbItemDesc.setCreated(date);
+        tbItemDesc.setUpdated(date);
+
+        int index = tbItemDubboService.insertItemAndItemDesc(item, tbItemDesc);
+        return index;
     }
 }

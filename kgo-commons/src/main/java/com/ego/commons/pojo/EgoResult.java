@@ -6,6 +6,7 @@ import java.io.Serializable;
 * */
 public class EgoResult implements Serializable {
     private int status; //状态
+    private Object data;
 
     public int getStatus() {
         return status;
@@ -13,5 +14,13 @@ public class EgoResult implements Serializable {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
     }
 }

@@ -2,6 +2,7 @@ package com.jdbc.kgo.manage.controller;
 
 import com.ego.commons.pojo.EasyUIDataGrid;
 import com.ego.commons.pojo.EgoResult;
+import com.jdbc.ego.pojo.TbItem;
 import com.jdbc.kgo.manage.service.TbItemService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,24 @@ import javax.annotation.Resource;
 public class TbItemController {
     @Resource
     private TbItemService tbItemService;
+
+
+    //增加商品的方法
+    @RequestMapping("item/save")
+    @ResponseBody
+    public EgoResult saveInfo(TbItem item,String desc){
+        int index = 0;
+        EgoResult er = new EgoResult();
+        try {
+            index = tbItemService.insertInto(item,desc);
+            if (index == 1){
+                er.setStatus(200);
+            }
+        } catch (Exception e) {
+            er.setData("新增商品信息失败");
+        }
+        return er;
+    }
 
     //商品下架商品的方法
     @RequestMapping("rest/item/instock")
