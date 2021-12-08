@@ -32,11 +32,17 @@
         <dubbo-version>2.5.3</dubbo-version>
         <zkClient-version>0.10</zkClient-version>
         <tomcat-version>2.2</tomcat-version>
+        <commons-net-version>3.7</commons-net-version>
         <!-- 分页插件包 -->
         <pagehelper-version>4.1.6</pagehelper-version>
     </properties>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>commons-net</groupId>
+                <artifactId>commons-net</artifactId>
+                <version>${commons-net-version}</version>
+            </dependency>
             <!-- 分页插件 -->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
