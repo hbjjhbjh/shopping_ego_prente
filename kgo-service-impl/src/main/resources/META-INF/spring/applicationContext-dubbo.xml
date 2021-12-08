@@ -22,4 +22,8 @@
     <bean class="com.jdbc.ego.service.impl.TbItemDubboServiceImpl" id="tbItemDubboServiceImpl"/>
     <!--  加上到resources文件夹下的applicationContext.xml-->
     <import resource="../../applicationContext.xml"/>
+    <!-- 把显示“商品类目” 的接口实现类加载到这里注册的zookeeper服务中 服务列表中 -->
+    <dubbo:service interface="com.kgo.dubbo.service.ItemCatDubbo" ref="itemCatDubboImpl"/>
+    <!-- 配置接口的实现类 -->
+    <bean class="com.jdbc.ego.service.impl.ItemCatDubboImpl" id="itemCatDubboImpl"/>
 </beans>

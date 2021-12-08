@@ -14,7 +14,7 @@
         http://www.springframework.org/schema/tx/spring-tx.xsd" default-autowire="byName">
     <!-- 注解扫描 -->
     <context:component-scan base-package="com.jdbc.kgo.manage.service.impl"/>
-<!-- 加载配置文件用于图片上传 -->
+	<!-- 加载配置文件用于图片上传 -->
 	<context:property-placeholder location="classpath*:commons.properties"></context:property-placeholder>
 
 </beans>
