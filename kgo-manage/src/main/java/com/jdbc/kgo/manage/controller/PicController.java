@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 @Controller
@@ -21,7 +23,14 @@ public class PicController {
     public Map<String,Object> uploadPic(MultipartFile uploadFile){
         //通过业务逻辑层接口调用上传图片的方法
         System.out.println(uploadFile.getName());
-        Map<String, Object> map = picService.uploadInfo(uploadFile);
+        Map<String, Object> map = new HashMap<>();
+        try {
+            map = picService.uploadInfo(uploadFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+            map.put("error", 1);
+            map.put("message","上传图片时服务器异常");
+        }
         return map;
     }
 }

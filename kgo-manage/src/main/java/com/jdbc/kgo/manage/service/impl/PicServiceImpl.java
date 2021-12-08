@@ -31,32 +31,21 @@ public class PicServiceImpl implements PicService {
     * 上传图片
     * */
     @Override
-    public Map<String, Object> uploadInfo(MultipartFile uploadFile) {
+    public Map<String, Object> uploadInfo(MultipartFile uploadFile) throws IOException {
         String filename = uploadFile.getOriginalFilename();
-        try {
             boolean uploadFile1 = FtpUtil.uploadFile(host, port, username, password, basePath, filePath, filename, uploadFile.getInputStream());
-            System.out.println(host);
-            System.out.println(port);
-            System.out.println(username);
-            System.out.println(password);
-            System.out.println(basePath);
-            System.out.println(filePath);
-            System.out.println(filename);
             System.out.println(uploadFile.getInputStream());
 
 
             HashMap<String, Object> map = new HashMap<>();
             if (uploadFile1){
-                map.put("error",1);
+                map.put("error",0);
                 map.put("url","http://"+host+"/"+filename);
             }else {
-                map.put("error",0);
-                map.put("message","错误信息：上传图片失败");
+                map.put("error", 1);
+                map.put("message", "错误信息：上传图片失败");
             }
             return map;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
+
     }
 }
