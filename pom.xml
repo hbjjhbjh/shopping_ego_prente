@@ -14,6 +14,8 @@
         <module>kgo-pojo</module>
         <module>kgo-service</module>
         <module>kgo-service-impl</module>
+        <module>kgo-portal</module>
+        <module>kgo-item</module>
     </modules>
     <!--管理Jar包的版本号  -->
     <properties>

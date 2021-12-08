@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="kgo-manage" />
-        <module name="kgo-pojo" />
         <module name="kgo-service" />
+        <module name="kgo-pojo" />
         <module name="kgo-service-impl" />
+        <module name="kgo-portal" />
+        <module name="kgo-item" />
         <module name="kgo-commons" />
       </profile>
     </annotationProcessing>

@@ -11,14 +11,12 @@
 
     <artifactId>kgo-commons</artifactId>
 
-<<<<<<< HEAD
     <dependencies>
         <dependency>
             <groupId>commons-net</groupId>
             <artifactId>commons-net</artifactId>
         </dependency>
     </dependencies>
-=======
->>>>>>> c14fefc6fdc2d9ab8060efdb44e43c76168d5b6e
+
 
 </project>
