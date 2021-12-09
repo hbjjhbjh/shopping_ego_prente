@@ -8,7 +8,6 @@ public class PageController {
 
     @RequestMapping("/")
     public String qianTaiController(){
-
-        return "index";
+        return "forward:/showBigPic";
     }
 }

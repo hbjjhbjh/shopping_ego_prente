@@ -2,7 +2,7 @@ package com.jdbc.kgo.manage.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.ego.commons.pojo.EasyUIDataGrid;
-import com.ego.commons.utils.IdUtils;
+import com.ego.commons.utils.IDUtils;
 import com.jdbc.ego.pojo.TbItem;
 import com.jdbc.ego.pojo.TbItemDesc;
 import com.jdbc.kgo.manage.service.TbItemService;
@@ -50,7 +50,7 @@ public class TbItemServiceImpl implements TbItemService {
     @Override
     public int insertInto(TbItem item, String desc) throws Exception {
         Date date = new Date();
-        long id = IdUtils.genItemId();
+        long id = IDUtils.genItemId();
         //商品表
         item.setId(id);
         item.setStatus((byte) 1);

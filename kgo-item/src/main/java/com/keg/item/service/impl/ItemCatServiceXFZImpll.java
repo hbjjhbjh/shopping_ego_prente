@@ -5,7 +5,7 @@ import com.jdbc.ego.pojo.TbItemCat;
 import com.keg.item.pojo.PortalMenu;
 import com.keg.item.pojo.PortalMenuNode;
 import com.keg.item.service.ItemCatServiceXFZ;
-import com.kgo.dubbo.service.ItemCatDubbo;
+import com.kgo.dubbo.service.ItemCatDubboService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ public class ItemCatServiceXFZImpll implements ItemCatServiceXFZ {
     * 需要来自提供者的接口对象
     * */
     @Reference
-    private ItemCatDubbo itemCatDubbo;
+    private ItemCatDubboService itemCatDubbo;
 
     @Override
     public PortalMenu showMenuInfo() {

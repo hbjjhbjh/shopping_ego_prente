@@ -4,7 +4,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.ego.commons.pojo.EasyUiTree;
 import com.jdbc.ego.pojo.TbItemCat;
 import com.jdbc.kgo.manage.service.ItemCatService;
-import com.kgo.dubbo.service.ItemCatDubbo;
+import com.kgo.dubbo.service.ItemCatDubboService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ public class ItemCatServiceImpl implements ItemCatService {
 
     //需要提供者中的接口对象
     @Reference
-    private ItemCatDubbo itemCatDubbo;
+    private ItemCatDubboService itemCatDubbo;
 
 
     @Override
